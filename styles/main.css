@@ -1,6 +1,5 @@
 /* font-size:3.8rem; (메인문구) font-size:2rem; (후원하기,h1) */
 
-
 /* boby 1140 */
 /* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
 body > * {margin:0 auto;}
@@ -84,6 +83,19 @@ body > * {margin:0 auto;}
     text-align:center; font-size:2rem; font-weight:700;
 }
 /* main3 ------------------------------------------------- */
+.main3 {}
+.main3 h1 {}
+.main3 p {}
+.main3 p a {}
+.main3 .dog {}
+.main3 .dog .dog1 {}
+.main3 .dog .dog1 li {}
+.main3 .dog .dog1 li span {}
+.main3 .dog .dog2 {}
+.main3 .dog .dog2 li {}
+.main3 .dog .dog2 li span {}
+.main3 .dog .dog2 li span:last-child {}
+
 /* main4 ------------------------------------------------- */
 /* main5 ------------------------------------------------- */
 /* footer ------------------------------------------------ */
