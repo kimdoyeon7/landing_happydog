@@ -1,0 +1,89 @@
+/* font-size:3.8rem; (메인문구) font-size:2rem; (후원하기,h1) */
+
+
+/* boby 1140 */
+/* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
+body > * {margin:0 auto;}
+/* 공통배경(높이900/헤더,메인1) */
+/* 공통배경1 (흰배경색) */
+.campaign1 {width:1100px; background-color: yellow;}
+/* 공통배경2 (초록배경색, 높이) */
+.campaign2 {width:1100px; background-color: blueviolet;}
+/* .campaign1,.campaign2, footer {height:700px;} */
+/* header------------------------------------------------- */
+.bg1 {
+    background-image:url(../images/main1_bg.jpg); 
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.bg1 header {
+    /* background-color: aqua; */
+    background:rgba(255,255,255,0.3); 
+    text-align:center;
+}
+.bg1 header h1 {height:80px;}
+.bg1 header h1 a {height:80px;}
+.bg1 header h1 a img {}
+/* main1 ------------------------------------------------- */
+.bg1 .main1 {
+    /* background-color: pink;  */
+    height:900px;
+}
+.bg1 .main1 h1 {
+    font-size:3.8rem; line-height:1.5em;
+    position:relative; top:280px; left:65px;
+}
+.bg1 .main1 p {
+    background-color: yellow;
+    display:inline-block;
+    position:relative; left:1600px; bottom:30px; 
+}
+.bg1 .main1 p a {font-size:2rem;}
+.bg1 .main1 p a:before {
+    content:'\f178'; font-weight:600; display:inline-block;
+    margin-right:5px;
+}
+/* main2 ------------------------------------------------- */
+.main2 {
+    /* height:900px; */
+}
+.main2 h1 {
+    background-color: cornflowerblue;
+    text-align:center;font-size:2rem;
+    /* padding-top:25px; */
+    padding:20px 0;
+}
+.main2 .middle {
+    background-color: aqua;
+    /* padding:300px 0; */
+    display:flex; flex-flow:row nowrap; justify-content:center;
+}
+/* .main2 .middle > * {padding:300px 0;} */
+.main2 .middle > * > p {font-size:1.5rem;}
+.main2 .middle .middle_left {background-color: beige;} 
+.main2 .middle .middle_left p {background-color: pink;margin-bottom:100px;}
+.main2 .middle .middle_left p:last-child {margin-bottom:50px;}
+.main2 .middle .middle_right {background-color: brown; margin:65px 0 85px;}
+.main2 .middle .middle_right p {}
+.main2 .middle .middle_right p:first-child {background-color: pink; margin-bottom:100px;}
+.main2 .bottom {
+    background-color: lightcoral;
+    display:flex; flex-flow:column nowrap; align-items: center;
+    padding-top:20px;
+}
+.main2 .bottom span {
+    background-color:#000;
+    border:2px solid #000;
+    display:block;
+    width:10px; height:10px;
+    border-radius:50%;
+    margin-bottom:25px;
+}
+.main2 h2 {
+    background-color: burlywood;
+    text-align:center; font-size:2rem; font-weight:700;
+}
+/* main3 ------------------------------------------------- */
+/* main4 ------------------------------------------------- */
+/* main5 ------------------------------------------------- */
+/* footer ------------------------------------------------ */
