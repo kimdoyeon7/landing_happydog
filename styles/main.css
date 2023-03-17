@@ -1,8 +1,8 @@
-/* font-size:3.8rem; (메인문구) font-size:2rem; (후원하기,h1) */
+/* font-size:3.8rem; (메인문구) font-size:2rem; (후원하기,h1) 1.5rem; = 강아지 이름 */
 
-/* boby 1140 */
+/* body 1140 */
 /* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
-body > * {margin:0 auto;}
+body > * {margin:0 auto; text-align:center;}
 /* 공통배경(높이900/헤더,메인1) */
 /* 공통배경1 (흰배경색) */
 .campaign1 {width:1100px; background-color: yellow;}
@@ -48,7 +48,7 @@ body > * {margin:0 auto;}
 }
 .main2 h1 {
     background-color: cornflowerblue;
-    text-align:center;font-size:2rem;
+    font-size:2rem;
     /* padding-top:25px; */
     padding:20px 0;
 }
@@ -83,18 +83,70 @@ body > * {margin:0 auto;}
     text-align:center; font-size:2rem; font-weight:700;
 }
 /* main3 ------------------------------------------------- */
-.main3 {}
-.main3 h1 {}
-.main3 p {}
+.main3 {background-color: lightblue;}
+.main3 h1 {
+    background-color: aquamarine;
+    font-size:2rem; padding:20px 0;
+}
+.main3 p {text-align:right;}
+.main3 p a:before {
+    content:'\f067'; font-weight:600; display:inline-block;
+    margin-right:5px;
+}
 .main3 p a {}
-.main3 .dog {}
-.main3 .dog .dog1 {}
+.main3 .dog {
+    background-color: chartreuse;
+    margin:0 auto;
+    width:700px; 
+    /* height:100%; */
+    display:flex; flex-flow:row nowrap; justify-content:space-between;
+}
+.main3 .dog .dog1 {
+    background-color: antiquewhite;
+    background-image:url(../images/sponsor_dog1.jpg);
+    background-position-y:-61px;
+    background-position-x:-40px;
+}
 .main3 .dog .dog1 li {}
-.main3 .dog .dog1 li span {}
-.main3 .dog .dog2 {}
+.main3 .dog .dog1 li h2 {}
+.main3 .dog .dog1 li p {}
+.main3 .dog .dog1 li p span {}
+.main3 .dog .dog1 li p span:last-child {}
+
+.main3 .dog .dog2 {
+    background-color: plum;
+    background-image:url(../images/sponsor_dog2.jpg);
+    background-position-y:-40px ;
+}
 .main3 .dog .dog2 li {}
-.main3 .dog .dog2 li span {}
-.main3 .dog .dog2 li span:last-child {}
+.main3 .dog .dog2 li h2 {}
+.main3 .dog .dog2 li p {}
+.main3 .dog .dog2 li p span {}
+.main3 .dog .dog2 li p span:last-child {}
+/* main3 의 공통 선택자 --------------------------  */
+.main3 .dog ul li {
+    background-color: #fff;
+    margin-top:200px;
+}
+.main3 .dog ul {
+    width:45%;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.main3 .dog ul li h2 {
+    text-align:left;
+    font-size:1.5rem;
+}
+.main3 .dog ul li p {
+    font-size:1.2rem;
+}
+.main3 .dog ul li p span {
+    font-size:1.2rem;
+}
+.main3 .dog ul li p span::after {
+    
+}
+
 
 /* main4 ------------------------------------------------- */
 /* main5 ------------------------------------------------- */
