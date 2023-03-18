@@ -4,7 +4,7 @@
 /* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
 body > * {margin:0 auto; }
 /* 공통폰트크기  */
-.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem;}
+.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem; padding:20px 0;}
 /* 공통배경1 (흰배경색) */
 .campaign1 {background-color: yellow;}
 /* 공통배경2 (초록배경색, 높이) */
@@ -51,7 +51,7 @@ body > * {margin:0 auto; }
 .main2 h1 {
     background-color: cornflowerblue;
     /* padding-top:25px; */
-    padding:20px 0; text-align:center;
+    text-align:center;
 }
 .main2 .middle {
     background-color: aqua;
@@ -87,7 +87,6 @@ body > * {margin:0 auto; }
 .main3 {background-color: lightblue; padding: 20px;}
 .main3 h1 {
     /* background-color: aquamarine; */
-    padding:20px 0;
 }
 .main3 p {text-align:right;}
 .main3 p a:before {
@@ -99,7 +98,6 @@ body > * {margin:0 auto; }
     background-color: chartreuse;
     margin:40px auto;
     width:700px; 
-    /* height:100%; */
     display:flex; flex-flow:row nowrap; justify-content:space-between;
 }
 .main3 .dog .dog1 {
@@ -134,7 +132,6 @@ body > * {margin:0 auto; }
 }
 .main3 .dog ul {
     width:45%;
-    
     background-repeat:no-repeat;
 }
 .main3 .dog ul li h2 {
@@ -157,27 +154,71 @@ body > * {margin:0 auto; }
 
 /* main4 ------------------------------------------------- */
 .main4 {padding:20px 30px;}
-.main4 h1 {}
+.main4 h1 {background-color: midnightblue;}
 /* 굿즈 사진들 ---------------------------------------------- */
 .main4 .spon_goods {
     background-color:lightgreen;
-    display:flex; flex-flow:row nowrap; justify-content:space-between;
-    
 }
-.main4 .spon_goods ul {}
-.main4 .spon_goods ul:first-child {
-    background-color: yellow;
+.main4 .spon_goods ul {
+    display:flex; flex-flow:row nowrap; justify-content:space-between;
+}
+.main4 .spon_goods ul li {
+    width:32%;
+    padding:90px 0 0;
+}
+.main4 .spon_goods ul li:first-child {
+    background-color:yellowgreen;
     background-image:url(../images/spon_goods_01.jpg);
     background-size:100%;
+    background-repeat:no-repeat;
+    background-position-y: -85px;
 }
-.main4 .spon_goods ul:nth-child(2) {background-color: aqua;}
-.main4 .spon_goods ul:last-child {background-color: plum;}
-.main4 .spon_goods ul li {}
+.main4 .spon_goods ul li:nth-child(2) {
+    background-color: aqua;
+    background-image:url(../images/spon_goods_02.jpg);
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position-y: -24px;
+}
+.main4 .spon_goods ul li:last-child {
+    background-color: plum;
+    background-image:url(../images/spon_goods_03.jpg);
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position-y: -83px;
+}
+.main4 .spon_goods ul li p {
+    margin-top: 100px;
+    padding: 20px 0;
+    background-color:pink;
+}
 /* 후원버튼들 ------------------------------------------- */
-.main4 .spon_btn {}
-.main4 .spon_btn a {}
+.main4 .spon_btn {
+    background-color: aqua;
+    display:flex; flex-flow:row nowrap; justify-content:space-between;
+    margin:0 auto;
+    width:32%;
+}
+.main4 .spon_btn a {
+    background-color: plum;
+    margin:50px 0;
+    padding:20px;
+}
 
 
 
 /* main5 ------------------------------------------------- */
+
+.main5 {}
+.main5 h1 {}
+/* 질문과 답 ------------------------------------------- */
+.main5 .faq {
+    background-color: aquamarine;
+}
+.main5 .faq dl {}
+.main5 .faq dl dt {}
+.main5 .faq dl dd {}
+/* 고정 질문 답변  --------------------------------- */
+.main5 .notice {background-color:goldenrod;}
+.main5 .notice p {}
 /* footer ------------------------------------------------ */
