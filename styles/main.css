@@ -1,14 +1,16 @@
 /* font-size:3.8rem; (메인문구) font-size:2rem; (후원하기,h2) 1.5rem; = 강아지 이름 , 1.7rem=h1 */
-
+/* #07aa07; */
 /* body 1140 */
 /* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
-body > * {margin:0 auto; }
+
+
+body > * {margin:0 auto; overflow-x:hidden;} 
 /* 공통폰트크기  */
-.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem; padding:20px 0;}
+.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem; font-weight:700; margin:50px 0; padding:10px; display:inline-block;}
 /* 공통배경1 (흰배경색) */
-.campaign1 {background-color: yellow;}
+/* .campaign1 {background-color: #00AB44;} */
 /* 공통배경2 (초록배경색, 높이) */
-.campaign2 {background-color: blueviolet;}
+/* .campaign2 {background-color: blueviolet;} */
 .campaign1,.campaign2 {width:1100px; padding:20px; text-align:center;}
 /* .campaign1,.campaign2, footer {height:700px;} */
 /* header------------------------------------------------- */
@@ -36,38 +38,73 @@ body > * {margin:0 auto; }
 }
 .bg1 .main1 p {
     background-color: yellow;
-    display:inline-block;
-    position:relative; left:1600px; bottom:30px; 
+    position:relative;
+    /* display:inline-block; */
+    /* position:relative; left:1600px; bottom:30px;  */
 }
-.bg1 .main1 p a {font-size:2rem;}
+.bg1 .main1 p a {font-size:2rem; position:absolute; right:300px; bottom:5px;}
 .bg1 .main1 p a:before {
     content:'\f178'; font-weight:600; display:inline-block;
     margin-right:5px;
 }
 /* main2 ------------------------------------------------- */
 .main2 {
-    padding: 20px;
+    background-image:url(../images/bg_main2.jpg);
+    background-size:cover; 
+    background-repeat:no-repeat;
+    position:relative;
+    z-index:-99;
+}
+.main2::after {
+    content:''; width:100%; height:100%;
+    background-image:linear-gradient(to top, #fff, #fff 0%, transparent);
+    position:absolute;
+    top:0; left:0;
+    z-index:-88;
 }
 .main2 h1 {
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     /* padding-top:25px; */
     text-align:center;
+    margin-bottom:30px;
+    color:#fff;
 }
 .main2 .middle {
-    background-color: aqua;
+    /* background-color: aqua; */
     /* padding:300px 0; */
     display:flex; flex-flow:row nowrap; justify-content:center;
+    
 }
 /* .main2 .middle > * {padding:300px 0;} */
-.main2 .middle > * > p {font-size:1.5rem;}
-.main2 .middle .middle_left {background-color: beige;} 
-.main2 .middle .middle_left p {background-color: pink;margin-bottom:100px;}
+.main2 .middle > * > p {font-size:1.5rem; color:#333;}
+
+.main2 .middle .middle_left {
+    /* background-color: beige; */
+    margin-right:200px;
+    position:relative;
+} 
+.main2 .middle .middle_left p {
+    /* background-color: pink; */
+    margin-bottom:100px;
+}
+/* .main2 .middle .middle_left p::after {
+    content:''; display:block; width:300px; height:10px; color:#000;
+    background-color:#000;
+    position:absolute;
+    right:5px; bottom:5px;
+} */
 .main2 .middle .middle_left p:last-child {margin-bottom:50px;}
-.main2 .middle .middle_right {background-color: brown; margin:65px 0 85px;}
+.main2 .middle .middle_right {
+    /* background-color: brown;  */
+    margin:65px 0 85px;
+}
 .main2 .middle .middle_right p {}
-.main2 .middle .middle_right p:first-child {background-color: pink; margin-bottom:100px;}
+.main2 .middle .middle_right p:first-child {
+    /* background-color: pink;  */
+    margin-bottom:100px;
+}
 .main2 .bottom {
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     display:flex; flex-flow:column nowrap; align-items: center;
     padding-top:20px;
 }
@@ -79,14 +116,29 @@ body > * {margin:0 auto; }
     border-radius:50%;
     margin-bottom:25px;
 }
+.main2 .bottom span:first-child {
+    background-color:#999;
+    border:2px solid #999;
+}
+.main2 .bottom span:nth-child(2) {
+    background-color:#555;
+    border:2px solid #555;
+}
+.main2 .bottom span:last-child {}
 .main2 h2 {
-    background-color: burlywood;
+    /* background-color: burlywood; */
     font-size:2rem; font-weight:700;
+    display:inline-block;
+    padding:10px;
+    background-color: #555;
+    color:#07aa07;
 }
 /* main3 ------------------------------------------------- */
-.main3 {background-color: lightblue; padding: 20px;}
+.main3 {/* background-color: lightblue;  */padding: 20px;}
 .main3 h1 {
     /* background-color: aquamarine; */
+    display:inline-block;
+    background-color: #07aa07;
 }
 .main3 p {text-align:right;}
 .main3 p a:before {
@@ -95,17 +147,17 @@ body > * {margin:0 auto; }
 }
 .main3 p a {}
 .main3 .dog {
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     margin:40px auto;
     width:700px; 
     display:flex; flex-flow:row nowrap; justify-content:space-between;
 }
 .main3 .dog .dog1 {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     background-image:url(../images/sponsor_dog1.jpg);
     background-size:cover;
-    background-position-y: -126px;
-    background-position-x: -121px;
+    background-position-y: -177px;
+    background-position-x: -183px;
 }
 .main3 .dog .dog1 li {}
 .main3 .dog .dog1 li h2 {}
@@ -114,7 +166,7 @@ body > * {margin:0 auto; }
 .main3 .dog .dog1 li p span:last-child {}
 
 .main3 .dog .dog2 {
-    background-color: plum;
+    /* background-color: plum; */
     background-image:url(../images/sponsor_dog2.jpg);
     background-size:100%;
     background-position-y: -7px;
@@ -126,9 +178,15 @@ body > * {margin:0 auto; }
 .main3 .dog .dog2 li p span {}
 .main3 .dog .dog2 li p span:last-child {}
 /* main3 의 공통 선택자 --------------------------  */
+.main3 .dog > *{
+    /* padding:20px; */
+    /* border:1px solid; */
+    /* border-color:#777, #fff, #777;
+    border-radius:right:10%; */
+}
 .main3 .dog ul li {
-    background-color: #fff;
     margin-top:200px;
+    padding:20px;
 }
 .main3 .dog ul {
     width:45%;
@@ -154,10 +212,10 @@ body > * {margin:0 auto; }
 
 /* main4 ------------------------------------------------- */
 .main4 {padding:20px 30px;}
-.main4 h1 {background-color: midnightblue;}
+.main4 h1 {background-color: #07aa07;}
 /* 굿즈 사진들 ---------------------------------------------- */
 .main4 .spon_goods {
-    background-color:lightgreen;
+    /* background-color:lightgreen; */
 }
 .main4 .spon_goods ul {
     display:flex; flex-flow:row nowrap; justify-content:space-between;
@@ -167,21 +225,21 @@ body > * {margin:0 auto; }
     padding:90px 0 0;
 }
 .main4 .spon_goods ul li:first-child {
-    background-color:yellowgreen;
+    /* background-color:yellowgreen; */
     background-image:url(../images/spon_goods_01.jpg);
     background-size:100%;
     background-repeat:no-repeat;
     background-position-y: -85px;
 }
 .main4 .spon_goods ul li:nth-child(2) {
-    background-color: aqua;
+    /* background-color: aqua; */
     background-image:url(../images/spon_goods_02.jpg);
     background-size:100%;
     background-repeat:no-repeat;
     background-position-y: -24px;
 }
 .main4 .spon_goods ul li:last-child {
-    background-color: plum;
+    /* background-color: plum; */
     background-image:url(../images/spon_goods_03.jpg);
     background-size:100%;
     background-repeat:no-repeat;
@@ -190,7 +248,9 @@ body > * {margin:0 auto; }
 .main4 .spon_goods ul li p {
     margin-top: 100px;
     padding: 20px 0;
-    background-color:pink;
+    
+    display:inline-block;
+    background-color:#fff;;
 }
 /* 후원버튼들 ------------------------------------------- */
 .main4 .spon_btn {
@@ -208,17 +268,62 @@ body > * {margin:0 auto; }
 
 
 /* main5 ------------------------------------------------- */
-
 .main5 {}
-.main5 h1 {}
+.main5 h1 {display:block;}
 /* 질문과 답 ------------------------------------------- */
 .main5 .faq {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    width:800px;
+    display:inline-block;
+    text-align:left;
+    padding:30px;
 }
 .main5 .faq dl {}
+.main5 .faq dl > *,
+.main5 .faq dl > * > * {font-size:1.3rem; margin-bottom:15px;}
 .main5 .faq dl dt {}
 .main5 .faq dl dd {}
+.main5 .faq dl dd span {
+    display:block; 
+    margin:15px 0 0 25px;
+}
 /* 고정 질문 답변  --------------------------------- */
-.main5 .notice {background-color:goldenrod;}
-.main5 .notice p {}
+.main5 .notice {
+    /* background-color:goldenrod;  */
+    margin-top:30px;
+}
+.main5 .notice p {font-size:0.9rem;}
+.main5 .notice p:last-child {margin-top:5px;}
+
+
 /* footer ------------------------------------------------ */
+footer {
+    /* background-color: lightcoral; */
+    background-image:url(../images/footer_bg.jpg);
+    background-size:100%;
+    background-repeat:no-repeat;
+    height:900px;
+    text-align:center;
+    position:relative;
+}
+footer p {background-color: yellow;}
+footer p a {
+    background-color: yellow;
+    font-size:2rem;
+    position:absolute; right:250px; top:150px;
+}
+footer p a::before {
+    content:'\f178'; display:inline-block; font-weight:600;
+    margin-right:10px;
+}
+footer .footer_bottom {margin-top:855px; font-size:0.8rem;}
+footer .footer_bottom a {margin-right:8px;}
+footer .footer_bottom a::after {
+    content:''; display:inline-block; width:1px; height:10px; background-color:#000;
+    margin-left:10px;
+}
+footer p:last-child {
+    /* background-color: green; */
+    margin-top:10px; 
+    font-size:0.8rem;
+}
