@@ -1,23 +1,33 @@
-/* font-size:3.8rem; (메인문구) font-size:2rem; (후원하기,h2) 1.5rem; = 강아지 이름 , 1.7rem=h1 */
-/* #07aa07; */
+/* 
+font-size: 3.8rem; (메인문구) 
+font-size: 2rem; (후원하기,h2)  
+font-size: 1.2rem; (유기견많아지는이유)
+font-size: 1.5rem; (강아지 이름) , 
+font-size: 1.7rem; (h1) 
+font-size:1.1rem; (후원동물 더보기)
+*/
+/* #07aa07;  #FFED4D  #7a96b2*/
 /* body 1140 */
 /* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
 
 
 body > * {margin:0 auto; overflow-x:hidden;} 
 /* 공통폰트크기  */
-.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem; font-weight:700; margin:50px 0; padding:10px; display:inline-block;}
+.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem; font-weight:700; margin:50px 0; padding:10px; display:inline-block; }
 /* 공통배경1 (흰배경색) */
 /* .campaign1 {background-color: #00AB44;} */
 /* 공통배경2 (초록배경색, 높이) */
 /* .campaign2 {background-color: blueviolet;} */
-.campaign1,.campaign2 {width:1100px; padding:20px; text-align:center;}
+.campaign1,.campaign2 {/* width:1100px; */ padding:20px; text-align:center;}
+.main3, .main5 {width:1100px;}
+
 /* .campaign1,.campaign2, footer {height:700px;} */
 /* header------------------------------------------------- */
 .bg1 {
     background-image:url(../images/main1_bg.jpg); 
     background-repeat:no-repeat;
     background-size:cover;
+    background-attachment:fixed;
 }
 .bg1 header {
     /* background-color: aqua; */
@@ -33,22 +43,24 @@ body > * {margin:0 auto; overflow-x:hidden;}
     height:900px;
 }
 .bg1 .main1 h1 {
-    font-size:3.8rem; line-height:1.5em;
+    font-size:3.8rem; line-height:1.5em; font-weight:700;
     position:relative; top:280px; left:65px;
 }
 .bg1 .main1 p {
-    background-color: yellow;
+    /* background-color: yellow; */
     position:relative;
     /* display:inline-block; */
     /* position:relative; left:1600px; bottom:30px;  */
 }
-.bg1 .main1 p a {font-size:2rem; position:absolute; right:300px; bottom:5px;}
+.bg1 .main1 p a {font-size:2rem; font-weight:700; position:absolute; right:300px; bottom:5px;}
+.bg1 .main1 p a:hover {color:#07aa07; font-weight:800;}
 .bg1 .main1 p a:before {
     content:'\f178'; font-weight:600; display:inline-block;
-    margin-right:5px;
+    margin-right:10px;
 }
 /* main2 ------------------------------------------------- */
 .main2 {
+    /* background-color:#FFED4D; */
     background-image:url(../images/bg_main2.jpg);
     background-size:cover; 
     background-repeat:no-repeat;
@@ -57,42 +69,31 @@ body > * {margin:0 auto; overflow-x:hidden;}
 }
 .main2::after {
     content:''; width:100%; height:100%;
-    background-image:linear-gradient(to top, #fff, #fff 0%, transparent);
+    background-image:linear-gradient(to top,#fff 0%, transparent);
     position:absolute;
     top:0; left:0;
     z-index:-88;
 }
 .main2 h1 {
-    /* background-color: cornflowerblue; */
-    /* padding-top:25px; */
-    text-align:center;
+    text-align:center; letter-spacing:-0.04rem;
     margin-bottom:30px;
     color:#fff;
 }
 .main2 .middle {
-    /* background-color: aqua; */
-    /* padding:300px 0; */
     display:flex; flex-flow:row nowrap; justify-content:center;
-    
+    margin-top:85px;
 }
-/* .main2 .middle > * {padding:300px 0;} */
-.main2 .middle > * > p {font-size:1.5rem; color:#333;}
-
+.main2 .middle > * > p {font-size:1.2rem; color:#333;}
 .main2 .middle .middle_left {
     /* background-color: beige; */
-    margin-right:200px;
+    margin-right:150px;
     position:relative;
 } 
 .main2 .middle .middle_left p {
     /* background-color: pink; */
     margin-bottom:100px;
 }
-/* .main2 .middle .middle_left p::after {
-    content:''; display:block; width:300px; height:10px; color:#000;
-    background-color:#000;
-    position:absolute;
-    right:5px; bottom:5px;
-} */
+.main2 .middle .middle_left p:nth-child(2) {font-weight:700;}
 .main2 .middle .middle_left p:last-child {margin-bottom:50px;}
 .main2 .middle .middle_right {
     /* background-color: brown;  */
@@ -101,12 +102,12 @@ body > * {margin:0 auto; overflow-x:hidden;}
 .main2 .middle .middle_right p {}
 .main2 .middle .middle_right p:first-child {
     /* background-color: pink;  */
-    margin-bottom:100px;
+    margin-bottom:100px; font-weight:700;
 }
 .main2 .bottom {
     /* background-color: lightcoral; */
     display:flex; flex-flow:column nowrap; align-items: center;
-    padding-top:20px;
+    padding-top:130px;
 }
 .main2 .bottom span {
     background-color:#000;
@@ -129,23 +130,47 @@ body > * {margin:0 auto; overflow-x:hidden;}
     /* background-color: burlywood; */
     font-size:2rem; font-weight:700;
     display:inline-block;
-    padding:10px;
-    background-color: #555;
-    color:#07aa07;
+    padding:10px; margin-top:60px;
+    background-color:#FFED4D ;
+    color:#000;
 }
 /* main3 ------------------------------------------------- */
-.main3 {/* background-color: lightblue;  */padding: 20px;}
+/* .main3 {background-color: lightblue; padding: 20px;} */
+.main3  {
+    /* background-color: yellow; */
+    /* width:1100px;
+    padding:20px 30px;
+    position:relative;
+    z-index:-88; */
+}
+.main3 {
+    margin:0 auto; width:100%;
+    content:''; display:inline-block; height:100%;
+    background-image: url(../images/bg_main4.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position-x:360px;
+    position:relative;
+}
+
 .main3 h1 {
     /* background-color: aquamarine; */
     display:inline-block;
-    background-color: #07aa07;
 }
 .main3 p {text-align:right;}
 .main3 p a:before {
     content:'\f067'; font-weight:600; display:inline-block;
     margin-right:5px;
 }
-.main3 p a {}
+
+.main3 p a {
+    font-size:1.1rem;
+    position:absolute; top:150px; right:400px;
+}
+.main3 p a:hover {
+    color:#07aa07;
+    content:''; display:block; width:160px; border-bottom:1px solid #07aa07;
+}
 .main3 .dog {
     /* background-color: chartreuse; */
     margin:40px auto;
@@ -194,7 +219,7 @@ body > * {margin:0 auto; overflow-x:hidden;}
 }
 .main3 .dog ul li h2 {
     text-align:left;
-    font-size:1.5rem;
+    font-size:1.5rem; font-weight:700;
     margin-bottom:28px;
 }
 .main3 .dog ul li p {
@@ -204,18 +229,31 @@ body > * {margin:0 auto; overflow-x:hidden;}
 .main3 .dog ul li p span {
     font-size:1.2rem;
 }
-.main3 .dog ul li p span::before {
+.main3 .dog ul li p:nth-of-type(1) > span,
+.main3 .dog ul li p:nth-of-type(2) > span {font-weight:700;}
+.main3 .dog ul li p span::after {
     content:''; display:inline-block; width:1px; height:12px; background-color:#000;
     margin-left:5px; margin-right:5px;
 }
 
 
 /* main4 ------------------------------------------------- */
-.main4 {padding:20px 30px;}
-.main4 h1 {background-color: #07aa07;}
+.main4 {
+    background-color:#FFED4D;
+    padding:20px 30px;
+}
+.main4 h1 {
+    background-color:#07aa07; 
+    color: #fff;
+    margin:50px 0;
+    padding:15px 20px;
+    border-radius:25px;
+}
 /* 굿즈 사진들 ---------------------------------------------- */
 .main4 .spon_goods {
     /* background-color:lightgreen; */
+    width:1100px;
+    margin:63px auto;
 }
 .main4 .spon_goods ul {
     display:flex; flex-flow:row nowrap; justify-content:space-between;
@@ -243,45 +281,54 @@ body > * {margin:0 auto; overflow-x:hidden;}
     background-image:url(../images/spon_goods_03.jpg);
     background-size:100%;
     background-repeat:no-repeat;
-    background-position-y: -83px;
+    background-position-y: -116px;
 }
 .main4 .spon_goods ul li p {
     margin-top: 100px;
     padding: 20px 0;
-    
-    display:inline-block;
-    background-color:#fff;;
+    display:block;
+    background-color:#fff;
+    font-weight:500;
 }
 /* 후원버튼들 ------------------------------------------- */
 .main4 .spon_btn {
-    background-color: aqua;
+    /* background-color: aqua; */
     display:flex; flex-flow:row nowrap; justify-content:space-between;
     margin:0 auto;
-    width:32%;
+    width:24%;
 }
 .main4 .spon_btn a {
-    background-color: plum;
+    background-color: #07aa07;
+    color:#fff;
     margin:50px 0;
-    padding:20px;
+    padding:15px 20px;
+    border-radius:25px;;
+}
+.main4 .spon_btn a:hover {
+    color:#000;
 }
 
 
 
 /* main5 ------------------------------------------------- */
 .main5 {}
-.main5 h1 {display:block;}
+.main5 h1 {
+    background-color: #07aa07; color:#fff;
+    margin:50px 0;
+    padding:15px 20px;
+    border-radius:25px;
+}
 /* 질문과 답 ------------------------------------------- */
 .main5 .faq {
     /* background-color: aquamarine; */
     width:800px;
-    display:inline-block;
     text-align:left;
     padding:30px;
 }
 .main5 .faq dl {}
 .main5 .faq dl > *,
 .main5 .faq dl > * > * {font-size:1.3rem; margin-bottom:15px;}
-.main5 .faq dl dt {}
+.main5 .faq dl dt {font-weight:700; letter-spacing:-0.04em;}
 .main5 .faq dl dd {}
 .main5 .faq dl dd span {
     display:block; 
@@ -306,11 +353,16 @@ footer {
     text-align:center;
     position:relative;
 }
-footer p {background-color: yellow;}
+footer p {
+    /* background-color: yellow; */
+}
 footer p a {
-    background-color: yellow;
-    font-size:2rem;
+    /* background-color: yellow; */
+    font-size:2rem; font-weight:700;
     position:absolute; right:250px; top:150px;
+}
+footer p a:hover {
+    color:#FFED4D; font-weight:800;
 }
 footer p a::before {
     content:'\f178'; display:inline-block; font-weight:600;
@@ -321,6 +373,9 @@ footer .footer_bottom a {margin-right:8px;}
 footer .footer_bottom a::after {
     content:''; display:inline-block; width:1px; height:10px; background-color:#000;
     margin-left:10px;
+}
+footer .footer_bottom a:last-child::after {
+    display:none;
 }
 footer p:last-child {
     /* background-color: green; */
