@@ -349,7 +349,7 @@ footer {
     background-image:url(../images/footer_bg.jpg);
     background-size:100%;
     background-repeat:no-repeat;
-    height:900px;
+    height:1000px;
     text-align:center;
     position:relative;
 }
@@ -360,6 +360,7 @@ footer p a {
     /* background-color: yellow; */
     font-size:2rem; font-weight:700;
     position:absolute; right:250px; top:150px;
+    color:#fff;
 }
 footer p a:hover {
     color:#FFED4D; font-weight:800;
@@ -368,10 +369,10 @@ footer p a::before {
     content:'\f178'; display:inline-block; font-weight:600;
     margin-right:10px;
 }
-footer .footer_bottom {margin-top:855px; font-size:0.8rem;}
-footer .footer_bottom a {margin-right:8px;}
+footer .footer_bottom {margin-top:950px; font-size:0.8rem;}
+footer .footer_bottom a {margin-right:8px; color:#fff;}
 footer .footer_bottom a::after {
-    content:''; display:inline-block; width:1px; height:10px; background-color:#000;
+    content:''; display:inline-block; width:1px; height:10px; background-color:#fff;
     margin-left:10px;
 }
 footer .footer_bottom a:last-child::after {
@@ -381,4 +382,5 @@ footer p:last-child {
     /* background-color: green; */
     margin-top:10px; 
     font-size:0.8rem;
+    color:#fff;
 }
