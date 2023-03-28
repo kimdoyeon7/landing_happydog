@@ -1,7 +1,7 @@
 /* 
-font-size: 3.8rem; (메인문구) 
-font-size: 2rem; (후원하기,h2)  
-font-size: 1.2rem; (유기견많아지는이유)
+font-size: 3rem; (메인문구) 
+font-size: 1.7rem; (후원하기,h2)  
+font-size: 1.8rem; (유기견많아지는이유)
 font-size: 1.5rem; (강아지 이름) , 
 font-size: 1.7rem; (h1) 
 font-size: 1.1rem; (후원동물 더보기)
@@ -10,10 +10,12 @@ font-size: 1.1rem; (후원동물 더보기)
 /* body 1140 */
 /* 전체 공통 넓이 바디의 자식들----!글포함!---- 1100px */
 
+===== 공통 선택자 및 디자인 요소(폰트크기등) 정리하기 ====
+
 
 body > * {margin:0 auto; overflow-x:hidden;} 
 /* 공통폰트크기  */
-.main2 h1,.main3 h1,.main4 h1 {font-size:1.7rem; font-weight:700;  padding:10px; display:inline-block; }
+.main3 h1,.main4 h1 {font-size:1.7rem; font-weight:700;  padding:10px; display:inline-block; }
 .campaign1,.campaign2 { padding:40px 20px; text-align:center;}
 /* .main3, .main5 {width:1100px;} */
 
@@ -62,88 +64,28 @@ body > * {margin:0 auto; overflow-x:hidden;}
     margin-right:10px;
 }
 /* main2 ------------------------------------------------- */
-.main2 {
-    /* background-color:#FFED4D; */
-    background-image:url(../images/bg_main2.jpg);
-    background-size:cover; 
-    background-repeat:no-repeat;
-    position:relative;
-    z-index:-99;
+.main2 {background-color:#f1f3f5;}
+.main2 .bg_width {margin:0 auto; width:1100px; background-color: aqua;}
+.main2 .bg_width .bg_img {
+    background:url(../images/main2_bg.png) no-repeat;
+    background-size:100%;
+    background-position-y:20px;
+    background-position-x: 0;
+    padding:30px 0;
+    display:flex; flex-flow:row nowrap;
 }
-.main2::after {
-    content:''; width:100%; 
-    height:100%;
-    background:linear-gradient(to top,#fff 0%, transparent);
-    position:absolute;
-    top:0; left:0;
-    z-index:-88;
+.main2 .bg_width .bg_img h1 {
+    background-color:#fff; text-align:left; display:inline-block;
+    font-size:1.7rem; font-weight:700; line-height:1.3em;
 }
-.main2 h1 {
-    text-align:center; 
-    margin-bottom:30px;
-    color:#fff;
-    font-size:2.2rem;
-}
-.main2 .middle {
+.main2 .bg_width .contents {}
+.main2 .bg_width .contents p {}
+/* 개별선택자 : 다섯개 / 인식개선 선택자 */
 
-}
-.main2 .middle p {
-    font-size:1.8rem; letter-spacing:-0.05rem; color:#333;
-    /* background-color: aqua; */
-    margin-bottom:50px;
-}
-.main2 .middle p:nth-child(1) {color:#222; font-size:1.8rem; margin-top:50px;}
-.main2 .middle p:nth-child(2) {color:#333; font-size:1.6rem;}
-.main2 .middle p:nth-child(3) {color:#333; font-size:1.4rem;}
-.main2 .middle p:nth-child(4) {color:#444; font-size:1.2rem;}
-.main2 .middle p:nth-child(5) {color:#555; font-size:1rem;}
-
-.main2 .middle > * > p {font-size:1.8rem; letter-spacing:-0.15rem; color:#333;}
-.main2 .middle .middle_left {
-    margin-right:150px;
-    position:relative;
-} 
-.main2 .middle .middle_left p {
-    margin-bottom:100px;
-}
-.main2 .middle .middle_left p:nth-child(2) {}
-.main2 .middle .middle_left p:last-child {margin-bottom:50px;}
-.main2 .middle .middle_right {
-    margin:65px 0 85px;
-}
-.main2 .middle .middle_right p {}
-.main2 .middle .middle_right p:first-child {
-    margin-bottom:100px;
-}
-.main2 .bottom {
-    /* background-color: lightcoral; */
-    display:flex; flex-flow:column nowrap; align-items: center;
-    padding-top:50px;
-}
-.main2 .bottom span {
-    background-color:#000;
-    border:2px solid #000;
-    display:block;
-    width:10px; height:10px;
-    border-radius:50%;
-    margin-bottom:25px;
-}
-.main2 .bottom span:first-child {
-    background-color:#999;
-    border:2px solid #999;
-}
-.main2 .bottom span:nth-child(2) {
-    background-color:#555;
-    border:2px solid #555;
-}
-.main2 .bottom span:last-child {}
-.main2 h2 {
-    /* background-color: burlywood; */
-    font-size:2rem; font-weight:700;
-    display:inline-block;
-    padding:10px; margin-top:60px;
-    background-color:#FFED4D ;
-    color:#000;
+.main2 .bg_width .contents p span {}
+.main2 .bg_width h2 {
+    background-color:#fff; text-align:left; display:inline-block;
+    font-size:1.7rem; font-weight:700; line-height:1.3em;
 }
 /* main3 ------------------------------------------------- */
 /* .main3 {background-color: lightblue; padding: 20px;} */
@@ -330,7 +272,14 @@ body > * {margin:0 auto; overflow-x:hidden;}
 .main5 .faq dl {}
 .main5 .faq dl > *,
 .main5 .faq dl > * > * {font-size:1.3rem; margin-bottom:15px;}
-.main5 .faq dl dt {font-weight:700; letter-spacing:-0.04em;}
+.main5 .faq dl > dt {
+    font-weight:700; letter-spacing:-0.04em;
+    display:inline-block;
+}
+.main5 .faq dl dt::after {
+    content:''; display:block; width:100%; height:1px; background:#000;
+    position:relative; bottom: -5px;
+}
 .main5 .faq dl dd {margin-bottom:30px;}
 .main5 .faq dl dd span {
     display:block; 
