@@ -13,15 +13,10 @@ font-size: 1.1rem; (후원동물 더보기)
 
 body > * {margin:0 auto; overflow-x:hidden;} 
 /* 공통폰트크기  */
-.main2 h1,.main3 h1,.main4 h1,.main5 h1 {font-size:1.7rem; font-weight:700; margin:50px 0; padding:10px; display:inline-block; }
-/* 공통배경1 (흰배경색) */
-/* .campaign1 {background-color: #00AB44;} */
-/* 공통배경2 (초록배경색, 높이) */
-/* .campaign2 {background-color: blueviolet;} */
-.campaign1,.campaign2 { padding:20px; text-align:center;}
+.main2 h1,.main3 h1,.main4 h1 {font-size:1.7rem; font-weight:700;  padding:10px; display:inline-block; }
+.campaign1,.campaign2 { padding:40px 20px; text-align:center;}
 /* .main3, .main5 {width:1100px;} */
 
-/* .campaign1,.campaign2, footer {height:700px;} */
 /* header------------------------------------------------- */
 .bg1 {
     background-image:url(../images/main1_bg.jpg); 
@@ -54,13 +49,12 @@ body > * {margin:0 auto; overflow-x:hidden;}
 .bg1 .main1 p {
     /* background-color: yellow; */
     position:relative; left:0; top:200px;
-    /* display:inline-block; */
-    /* position:relative; left:1600px; bottom:30px;  */
+    
 }
 .bg1 .main1 p a {
     background-color: #fff;
     font-size:1.7rem; font-weight:700;
-    padding:15px; border-radius:50px;
+    padding:10px 15px; border-radius:50px;
 }
 .bg1 .main1 p a:hover {color:#07aa07; font-weight:800;}
 .bg1 .main1 p a:before {
@@ -299,13 +293,13 @@ body > * {margin:0 auto; overflow-x:hidden;}
     /* background-color: aqua; */
     display:flex; flex-flow:row nowrap; justify-content:space-between;
     margin:0 auto;
-    width:24%;
+    width:30%;
 }
 .main4 .spon_btn a {
     background-color: #07aa07;
     color:#fff;
     margin:50px 0;
-    padding:15px 20px;
+    padding:15px 40px;
     border-radius:25px;
     font-size:1.7rem; font-weight:700;
     border-radius:50px;
@@ -322,9 +316,9 @@ body > * {margin:0 auto; overflow-x:hidden;}
 }
 .main5 h1 {
     /* background-color: #07aa07; color:#fff; */
-    margin:50px 0;
-    padding:15px 20px;
+    padding:0 20px 15px;
     border-radius:25px;
+    font-size:1.7rem; font-weight:700;
 }
 /* 질문과 답 ------------------------------------------- */
 .main5 .faq {
@@ -363,7 +357,7 @@ footer {
     overflow:hidden;
     background-attachment:fixed;
 }
-footer h1 {font-size:3rem; font-weight:700; margin-top:110px; line-height:1.5em; color:#fff;}
+footer h1 {font-size:3rem; font-weight:700; margin-top:140px; line-height:1.5em; color:#fff;}
 footer p {
     /* background-color: yellow; */
     margin-bottom:20px;
