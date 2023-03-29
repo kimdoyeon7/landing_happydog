@@ -51,7 +51,6 @@ body > * {margin:0 auto; overflow-x:hidden;}
 .bg1 .main1 p {
     /* background-color: yellow; */
     position:relative; left:0; top:200px;
-    
 }
 .bg1 .main1 p a {
     background-color: #fff;
@@ -78,11 +77,27 @@ body > * {margin:0 auto; overflow-x:hidden;}
     background-color:#fff; text-align:left; display:inline-block;
     font-size:1.7rem; font-weight:700; line-height:1.3em;
 }
-.main2 .bg_width .contents {}
-.main2 .bg_width .contents p {}
-/* 개별선택자 : 다섯개 / 인식개선 선택자 */
+.main2 .bg_width .contents {display:flex; flex-flow:column wrap;}
+.main2 .bg_width .contents p {
+    border-radius:50px; width:30%; height:100px;
+}
+.main2 .bg_width .contents > p {}
+.main2 .bg_width .contents p:nth-child(1) {
+    background-image:url(../images/main2_content_1.jpg);
+    background:radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+.main2 .bg_width .contents p:nth-child(2) {background-image:url(../images/main2_content_2.jpg)}
+.main2 .bg_width .contents p:nth-child(3) {background-image:url(../images/main2_content_3.jpg)}
+.main2 .bg_width .contents p:nth-child(4) {background-image:url(../images/main2_content_4.jpg)}
+.main2 .bg_width .contents p:nth-child(5) {background-image:url(../images/main2_content_5.jpg)}
+.main2 .bg_width .contents p span {
+    display:block; font-weight:700; 
+    text-align:center;
+    margin-top:45px;
+    background-color: rgb(255, 255, 255,0.5);
+    padding:5px;
+}
 
-.main2 .bg_width .contents p span {}
 .main2 .bg_width h2 {
     background-color:#fff; text-align:left; display:inline-block;
     font-size:1.7rem; font-weight:700; line-height:1.3em;
