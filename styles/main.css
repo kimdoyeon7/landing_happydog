@@ -73,8 +73,12 @@ body main .visual h2::after {
   height: 2px;
 }
 body main .wrap1 {
-  background-color: yellow;
   text-align: left;
+}
+body main .wrap1 .container {
+  position: relative;
+  left: 0;
+  bottom: -100px;
 }
 body main .wrap1 .container h1 {
   font-size: 3rem;
@@ -83,13 +87,13 @@ body main .wrap1 .container h1 {
 body main .wrap1 .container h1 span {
   font-size: 3rem;
   color: #2f940c;
-  font-weight: 700;
+  font-weight: 800;
 }
 body main .wrap1 .container p {
-  background-color: pink;
-  margin: 150px auto 0;
+  margin: 200px auto 0;
   height: 400px;
   width: 300px;
+  overflow-y: hidden;
 }
 body main .wrap1 .container p img {
   width: 100%;
@@ -104,5 +108,22 @@ body main .wrap1 .container .contents img {
   position: absolute;
 }
 body main .wrap1 .container .contents img:nth-child(1) {
-  top: 50px;
+  left: 590px;
+  bottom: 500px;
+}
+body main .wrap1 .container .contents img:nth-child(2) {
+  left: 250px;
+  bottom: 320px;
+}
+body main .wrap1 .container .contents img:nth-child(3) {
+  height: 80px;
+  left: 700px;
+  bottom: 200px;
+}
+body main .wrap1 .container .contents img:nth-child(4) {
+  left: 250px;
+  bottom: 100px;
+}
+body main .wrap2 .container {
+  background-color: #E3E3E3;
 }/*# sourceMappingURL=main.css.map */
