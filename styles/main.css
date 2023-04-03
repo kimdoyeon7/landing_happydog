@@ -1,3 +1,108 @@
 body {
-  background-color: #eee;
+  overflow-x: hidden;
+}
+body > * {
+  width: 1200px;
+  margin: 80px auto;
+  text-align: center;
+}
+body main .visual .container {
+  position: relative;
+}
+body main .visual .container video {
+  width: 100%;
+  border-radius: 50px;
+  z-index: 800;
+}
+body main .visual .container h1 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+}
+body main .visual .container p {
+  background-color: #2f940c;
+  padding: 20px;
+  border-radius: 50px;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 48%;
+  bottom: 10%;
+}
+body main .visual .container p img {
+  width: 100%;
+  text-align: center;
+  filter: invert(1);
+}
+body main .visual h2 {
+  margin: 80px auto;
+  position: relative;
+  left: 10%;
+  background: #fff;
+  z-index: 999;
+}
+body main .visual h2 .txt {
+  background: #fff;
+  position: relative;
+  z-index: 999;
+  width: 1000px;
+  font-size: 3rem;
+}
+body main .visual h2 .txt span {
+  font-size: 3rem;
+  color: #fff;
+  background-color: #2f940c;
+  margin: 0 5px;
+  padding: 0 5px;
+  font-weight: 700;
+}
+body main .visual h2::after {
+  content: "";
+  display: block;
+  background: #000;
+  width: 1000%;
+  position: absolute;
+  left: -1000px;
+  top: 20px;
+  height: 2px;
+}
+body main .wrap1 {
+  background-color: yellow;
+  text-align: left;
+}
+body main .wrap1 .container h1 {
+  font-size: 3rem;
+  line-height: 1.3em;
+}
+body main .wrap1 .container h1 span {
+  font-size: 3rem;
+  color: #2f940c;
+  font-weight: 700;
+}
+body main .wrap1 .container p {
+  background-color: pink;
+  margin: 150px auto 0;
+  height: 400px;
+  width: 300px;
+}
+body main .wrap1 .container p img {
+  width: 100%;
+}
+body main .wrap1 .container .contents {
+  position: relative;
+  width: 300px;
+  height: 100px;
+}
+body main .wrap1 .container .contents img {
+  width: 100%;
+  position: absolute;
+}
+body main .wrap1 .container .contents img:nth-child(1) {
+  top: 50px;
 }/*# sourceMappingURL=main.css.map */

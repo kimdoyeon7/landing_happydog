@@ -1,5 +1,82 @@
-$primary-color: #eee;
+// #e3e3e3 = 배경 #fff= 글자색 #2F940C = 메인색 
+// width:1200px; 
+// 폰트사이즈  h1 = font-size:3rem;
+$bg_color: #E3E3E3;
+$fontColorW:#fff;
+$colorMain:#2f940c;
+$fontSizeT:3rem;
+@mixin layout {width:1200px; margin:80px auto; text-align:center;}
 
 body {
-    background-color: $primary-color;
+    overflow-x:hidden;
+    > * {@include layout;}
+    main {
+        .visual {
+            .container {
+                position:relative;
+                video { width:100%; border-radius: 50px; z-index:800;}
+                h1 {position:absolute; left:50%; top:40%; transform:translate(-50%,-50%); z-index:999; color:$fontColorW; font-size:$fontSizeT; font-weight:700;}
+                p{
+                background-color: $colorMain; padding:20px; 
+                border-radius: 50px;
+                display:inline-block;
+                width:70px; height:70px;
+                position:absolute; left:48%; bottom:10%;
+                    img{width:100%; text-align: center; filter:invert(1)}
+                }//e:p
+            }// e:container
+            h2 {
+            margin:80px auto;
+            position: relative; left:10%;
+            background: #fff;
+            z-index: 999;
+                .txt {
+                    background: #fff;
+                    position: relative;
+                    z-index: 999;
+                    width: 1000px;
+                    font-size:$fontSizeT;
+                    span{font-size:$fontSizeT; color:$fontColorW; background-color: $colorMain; margin:0 5px; padding:0 5px; font-weight: 700;}
+                }
+            }
+            h2::after{content: '';
+                display: block;
+                background:#000;
+                width: 1000%;
+                position: absolute;
+                left: -1000px;
+                top: 20px;
+                height: 2px;
+                }
+        }// e:visual
+        // 공통선택자
+        .wrap{}
+        // 유기동물, 왜 해마다 늘어날까?
+        .wrap1 {
+            background-color: yellow;
+            text-align:left; 
+            .container {
+                h1 {
+                    font-size:$fontSizeT;
+                    line-height:1.3em;
+                    span {font-size:$fontSizeT; color:$colorMain; font-weight: 700;}
+                }
+                p {
+                    background-color: pink;
+                    margin:150px auto 0;
+                height:400px; width:300px;
+                    img{width:100%;}
+                }
+                .contents {
+                    position:relative; width:300px; height:100px;
+                    img{width:100%; position:absolute;}
+                    img:nth-child(1) {top:50px; }
+                    img:nth-child(2) {}
+                    img:nth-child(3) {}
+                    img:nth-child(4) {}
+                }
+            }
+        }// e:wrap1
+    } // e:main
 }
+
