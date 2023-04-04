@@ -5,11 +5,13 @@ $bg_color: #E3E3E3;
 $fontColorW:#fff;
 $colorMain:#2f940c;
 $fontSizeT:3rem;
+$titleFont:'Noto Sans KR',sans-serif;
 @mixin layout {width:1200px; margin:80px auto; text-align:center;}
+@mixin flex-row {display:flex; flex-flow:row nowrap; justify-content:space-between;}
 
 body {
     overflow-x:hidden;
-    > * {@include layout;}
+    > main {@include layout;}
     main {
         .visual {
             .container {
@@ -69,11 +71,11 @@ body {
                     img{width:100%;}
                 }
                 .contents {
-                    position:relative; width:300px; height:100px;
+                    position:relative; width:250px; height:100px;
                     img{width:100%; position:absolute;}
                     img:nth-child(1) {left:590px; bottom:500px;} 
                     img:nth-child(2) {left:250px; bottom:320px;}
-                    img:nth-child(3) {height:80px; left:700px; bottom:200px;}
+                    img:nth-child(3) {left:700px; bottom:200px;}
                     img:nth-child(4) {left:250px; bottom:100px;}
                 }
             }
@@ -81,21 +83,95 @@ body {
         .wrap2 {
             .container {
                 background-color: $bg_color;
-                h1 {}
-                p {a{}}
-                .info {
-                    p {}
-                }//e:info 
+                padding:50px 50px 0;
+                .title {text-align:left; position:relative;
+                        h1 {font-size:$fontSizeT; font-weight: 700; position:relative;}
+                        h1::after {
+                            content:''; display:block; width:28%; height:1px; background: #000;
+                            position: absolute; left:0; bottom:-10px;
+                        }
+                        h1+p {margin-top:20px; font-weight: 800;
+                            a{}
+                        }
+                    .title_right {text-align:right; position:absolute; right:0; top:0; 
+                        p {line-height:1.5; font-family:$titleFont;}
+                        .info {margin-top:30px; font-weight: 500;}
+                    }//e:title_right
+                }//e:title
                 .contents {
-                    .first {
-                        a {
-                            img {}
-                            .dog {}
+                    @include flex-row();
+                    margin-top:120px;
+                    overflow-y: hidden;
+                    .dog {position:relative; top:10px; margin:0 15px; 
+                        a {display: block; 
+                            img {width:100%; border-radius:40px 40px 0 0;}
+                            .they {
+                                position:absolute; left:145px; top:0;
+                                background-color: $colorMain;
+                            }
                         }
                     }
                 }
             }//e:container
         }//e:wrap2
+        .wrap3 {
+            @include layout; 
+            h1 {font-size:$fontSizeT;
+                span {font-size:$fontSizeT; font-weight: 700;}
+            }
+            .goods {
+                .long {
+                    img {width:100%;}
+                    img+p {}
+                    p+p {}
+                }
+                .ecobag{background-image:url(../images/goods_long.png) no-repeat;}
+                .tumbler{img+p{}}
+                .blanket{img+p{}}
+            }
+            .goods_detail {}
+            .sponsor {}
+        }//e:wrap3
+        // faq
+        .wrap4 {
+            // background-color: pink;
+            h1 {font-size:2rem; margin:50px 0; text-align: center; font-family:$titleFont; font-weight: 700;}
+            .contanier {
+                text-align: left;
+                .question {
+                    margin:50px 0;
+                    > *, > * > * {font-family:$titleFont; font-size:1.5rem; line-height:1.5em;}
+                    p:first-child {font-family:$titleFont; font-weight: 700; color:$colorMain; margin:15px 0;}
+                    p:first-child::before {content:''; display:block; width:100%; height:3px; background-color: $colorMain; position:relative; top:-5px;}
+                    p:last-child {
+                        span {font-weight: 700;}
+                    }
+                }
+            }
+        }//e:wrap4
     } // e:main
+    footer {
+        p {text-align:center;
+            a {
+                background-color: $colorMain;
+                padding:15px 80px;
+                font-size:2rem;
+                border-radius:50px;
+                color:$fontColorW;
+                font-weight: 700;
+                position:relative; top:10px;
+            }
+        }
+        .footer_bottom {
+            width:100%; height:800px;
+            background: url(../images/footer_bg.jpg) no-repeat; 
+            background-size:100%;
+            background-attachment:fixed;
+            text-align:center;
+            > * {color:$fontColorW; font-size:0.9rem; font-family: $titleFont;}
+            a {display:inline-block; margin:750px 20px 0 0;}
+            p {margin-top:10px;}
+        }
+    } // e:footer
 }
 
