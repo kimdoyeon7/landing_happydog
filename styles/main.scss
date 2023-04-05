@@ -6,7 +6,7 @@ $fontColorW:#fff;
 $colorMain:#2f940c;
 $fontSizeT:3rem;
 $titleFont:'Noto Sans KR',sans-serif;
-@mixin layout {width:1200px; margin:80px auto; text-align:center;}
+@mixin layout {width:1200px; margin:80px auto;}
 @mixin flex-row {display:flex; flex-flow:row nowrap; justify-content:space-between;}
 
 body {
@@ -17,7 +17,7 @@ body {
             .container {
                 position:relative;
                 video { width:100%; border-radius: 50px; z-index:800;}
-                h1 {position:absolute; left:50%; top:40%; transform:translate(-50%,-50%); z-index:999; color:$fontColorW; font-size:$fontSizeT; font-weight:700;}
+                h1 {position:absolute; left:50%; top:40%; transform:translate(-50%,-50%); z-index:999; color:$fontColorW; font-size:$fontSizeT; font-weight:700; text-align: center;}
                 p{
                 background-color: $colorMain; padding:20px; 
                 border-radius: 50px;
@@ -32,6 +32,7 @@ body {
             position: relative; left:10%;
             background: #fff;
             z-index: 999;
+            text-align: center;
                 .txt {
                     background: #fff;
                     position: relative;
@@ -84,57 +85,115 @@ body {
             .container {
                 background-color: $bg_color;
                 padding:50px 50px 0;
-                .title {text-align:left; position:relative;
-                        h1 {font-size:$fontSizeT; font-weight: 700; position:relative;}
-                        h1::after {
-                            content:''; display:block; width:28%; height:1px; background: #000;
-                            position: absolute; left:0; bottom:-10px;
-                        }
-                        h1+p {margin-top:20px; font-weight: 800;
-                            a{}
-                        }
-                    .title_right {text-align:right; position:absolute; right:0; top:0; 
+                .title {
+                    display:grid;
+                    grid-template-areas:
+                    'h1 right'
+                    'more right';
+                    justify-content: space-between;
+                    h1 {grid:'h1';font-size:$fontSizeT; font-weight: 700; display:inline-block;}
+                    h1::after {
+                        content:''; display:block; width:100%; height:1px; background: #000;
+                        position:relative; left:0; bottom:-10px;
+                    }
+                    .title_right {
+                        grid:'right';
+                        text-align:right; 
                         p {line-height:1.5; font-family:$titleFont;}
-                        .info {margin-top:30px; font-weight: 500;}
+                        .info {font-weight: 500;}
                     }//e:title_right
+                    p { 
+                        .more {grid:'more'; text-align: left; font-weight:700; font-family:$titleFont;}
+                    }
                 }//e:title
                 .contents {
-                    @include flex-row();
-                    margin-top:120px;
-                    overflow-y: hidden;
-                    .dog {position:relative; top:10px; margin:0 15px; 
-                        a {display: block; 
-                            img {width:100%; border-radius:40px 40px 0 0;}
-                            .they {
-                                position:absolute; left:145px; top:0;
-                                background-color: $colorMain;
-                            }
+                    .dog {
+                        @include flex-row(); margin-top:120px;
+                        .they {
+                            display:block; width:33%; height:300px;
+                            border-top-left-radius: 50px;
+                            border-top-right-radius: 50px;
                         }
-                    }
-                }
+                        .one {
+                            background: url(../images/main3_contents_1.jpg) no-repeat;
+                            background-size:cover;
+                        }
+                        .two {
+                            background: url(../images/main3_contents_2.jpg) no-repeat;
+                            background-size:cover;
+                        }
+                        .three {
+                            background: url(../images/main3_contents_3.jpg) no-repeat;
+                            background-size:cover;
+                        }
+                        // .they {
+                        //     opacity: 0;
+                        //     background: rgba(0,102,51,0.8);
+                        //     color: #fff;
+                        //     width: 100%;
+                        //     height: 100%;
+                        //     display: block;
+                        //     position: absolute;
+                        //     left: 0;
+                        //     top: 0;
+                        //     text-align: center;
+                        // }// e: 호버했을때 글자 보이게
+                    }//e:애니메이션
+                }//e:contents
             }//e:container
         }//e:wrap2
         .wrap3 {
-            @include layout; 
-            h1 {font-size:$fontSizeT;
+            position:relative;
+            h1 {font-size:$fontSizeT; text-align: center; margin:100px 0;
                 span {font-size:$fontSizeT; font-weight: 700;}
             }
-            .goods {
-                .long {
-                    img {width:100%;}
-                    img+p {}
-                    p+p {}
-                }
-                .ecobag{background-image:url(../images/goods_long.png) no-repeat;}
-                .tumbler{img+p{}}
-                .blanket{img+p{}}
+            .goods {@include layout;
+                .long {}
+                .ecobag {}
+                .tumbler {}
+                .blanket {}
             }
-            .goods_detail {}
-            .sponsor {}
+            .goods_detail {
+                @include layout; @include flex-row();
+                p {display:block; width:33%; height:250px;}
+                p:first-child {background: url(../images/ecobag_detail.jpg) no-repeat; background-size: cover; border-top-left-radius: 50px; border-bottom-left-radius:50px;}
+                p:nth-child(2) {background: url(../images/tumbler_detail.jpg) no-repeat; background-size: cover;}
+                p:last-child {background: url(../images/blanket_detail.jpg) no-repeat; background-size: cover; border-top-right-radius: 50px; border-bottom-right-radius:50px;}
+            }
+            .line {
+                background: #000;
+                width: 1000%;
+                position: relative;
+                left: -1000px;
+                top: 30px;
+                height: 2px;
+                z-index:88;
+                .sponsor {
+                    text-align: center;
+                    background: #fff;
+                    position:absolute;
+                    left:1200px; top:-29px;
+                    z-index:99;
+                    width: 800px;
+                    margin: 0 auto;
+                    a {
+                        display:inline-block;
+                        background-color: $colorMain;
+                        padding:15px 45px;
+                        font-size:2rem;
+                        border-radius:50px;
+                        color:$fontColorW;
+                        font-weight: 700;
+                        margin-right:55px;
+                    }
+                    a:last-child {margin:0;}
+                }
+            }
         }//e:wrap3
         // faq
         .wrap4 {
             // background-color: pink;
+            margin:140px;
             h1 {font-size:2rem; margin:50px 0; text-align: center; font-family:$titleFont; font-weight: 700;}
             .contanier {
                 text-align: left;
