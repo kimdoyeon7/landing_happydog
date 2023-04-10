@@ -6,12 +6,17 @@ $fontColorW:#fff;
 $colorMain:#2f940c;
 $fontSizeT:3rem;
 $titleFont:'Noto Sans KR',sans-serif;
+$buttonColor:#B3E8A0;
 @mixin layout {width:1200px; margin:80px auto;}
 @mixin flex-row {display:flex; flex-flow:row nowrap; justify-content:space-between;}
+@keyframes dog_hover {
+    0% {transform-origin:center bottom; transform:scaleY(1) translateY(0); }
+    100% {transform-origin:center bottom; transform:scaleY(1.5) translateY(100px);}
+}
 
 body {
     overflow-x:hidden;
-    > main {@include layout;}
+    > main > .visual ,.wrap3, .wrap4 {@include layout;}
     main {
         .visual {
             .container {
@@ -58,32 +63,41 @@ body {
         .wrap1 {
             // background-color: yellow;
             text-align:left; 
+            overflow-y:hidden; 
             .container {
-                position:relative; left:0; bottom:-100px;
+                width:1200px; margin:0 auto;
                 h1 {
-                    font-size:$fontSizeT;
+                    font-size:$fontSizeT; 
                     line-height:1.3em;
                     span {font-size:$fontSizeT; color:$colorMain; font-weight: 800;}
                 }
                 p {
                 // background-color: pink;
-                margin:200px auto 0;
-                height:400px; width:300px; overflow-y:hidden;
+                margin:0 auto;
+                height:900px; width:500px; 
+                position:relative; bottom:-150px;
                     img{width:100%;}
                 }
                 .contents {
                     position:relative; width:250px; height:100px;
-                    img{width:100%; position:absolute;}
-                    img:nth-child(1) {left:590px; bottom:500px;} 
-                    img:nth-child(2) {left:250px; bottom:320px;}
-                    img:nth-child(3) {left:700px; bottom:200px;}
-                    img:nth-child(4) {left:250px; bottom:100px;}
+                    img{height:80%; position:absolute;}
+                    // img:nth-child(1) {left:590px; bottom:500px;} 
+                    // img:nth-child(2) {left:250px; bottom:320px;}
+                    // img:nth-child(3) {left:700px; bottom:200px;}
+                    // img:nth-child(4) {left:250px; bottom:120px;}
+
+                    img:nth-child(1) {left:714px; bottom:600px;} 
+                    img:nth-child(2) {left:151px; bottom:478px;}
+                    img:nth-child(3) {left:700px; bottom:255px;}
+                    img:nth-child(4) {left:200px; bottom:80px;}
                 }
             }
         }// e:wrap1
+        // 긴급 후원 대상
         .wrap2 {
+            background-color: $bg_color;
+            padding:20px 150px 0;
             .container {
-                background-color: $bg_color;
                 padding:50px 50px 0;
                 .title {
                     display:grid;
@@ -103,45 +117,55 @@ body {
                         .info {font-weight: 500;}
                     }//e:title_right
                     p { 
-                        .more {grid:'more'; text-align: left; font-weight:700; font-family:$titleFont;}
+                        .more {grid:'more'; text-align: left; font-weight:700; font-family:$titleFont; padding:10px;}
+                        .more:hover {color:$colorMain; background-color: $fontColorW; padding:10px; border-radius:30px;}
                     }
                 }//e:title
                 .contents {
                     .dog {
-                        @include flex-row(); margin-top:120px;
-                        .they {
-                            display:block; width:33%; height:300px;
-                            border-top-left-radius: 50px;
-                            border-top-right-radius: 50px;
+                        @include flex-row();
+                        margin-top:100px;
+                        .sponsor_target {
+                            width:30%; position:relative; overflow: hidden; 
+                            border-top-left-radius:80px;
+                            border-top-right-radius:80px;
+                            .dog_img { position:relative; bottom:-20px;
+                                img{width:100%; 
+                                    border-top-left-radius:50px;
+                                    border-top-right-radius:50px;
+                                } 
+                            }
+                            .dog_info {
+                                // animation: dog_hover 1s;
+                                transition: all 1s;
+                                position:absolute; left:0; top:0;
+                                padding:160px 0;
+                                background-color: $colorMain; width:100%; height:120%; opacity:0;
+                                > *, > * > * {
+                                    font-size:1.5rem; text-align: center; font-family: $titleFont; color:$fontColorW; 
+                                    margin:20px 0;  
+                                }
+                                p {
+                                    span::before {
+                                        content:''; display:inline-block; width:2px; height:20px; background-color: $fontColorW;
+                                        margin:0 10px;
+                                    }
+                                }
+                            }
                         }
-                        .one {
-                            background: url(../images/main3_contents_1.jpg) no-repeat;
-                            background-size:cover;
+                        .sponsor_target:hover {
+                            overflow:hidden;
+                            .dog_info { 
+                                transform:translateY(-50px);
+                                opacity:1;
+                                
+                            }
                         }
-                        .two {
-                            background: url(../images/main3_contents_2.jpg) no-repeat;
-                            background-size:cover;
-                        }
-                        .three {
-                            background: url(../images/main3_contents_3.jpg) no-repeat;
-                            background-size:cover;
-                        }
-                        // .they {
-                        //     opacity: 0;
-                        //     background: rgba(0,102,51,0.8);
-                        //     color: #fff;
-                        //     width: 100%;
-                        //     height: 100%;
-                        //     display: block;
-                        //     position: absolute;
-                        //     left: 0;
-                        //     top: 0;
-                        //     text-align: center;
-                        // }// e: 호버했을때 글자 보이게
-                    }//e:애니메이션
-                }//e:contents
+                    }
+                }
             }//e:container
         }//e:wrap2
+        // 굿즈 후원하기 
         .wrap3 {
             position:relative;
             h1 {font-size:$fontSizeT; text-align: center; margin:100px 0;
@@ -187,13 +211,14 @@ body {
                         margin-right:55px;
                     }
                     a:last-child {margin:0;}
+                    a:hover {background-color:$buttonColor; color:$colorMain; }
                 }
             }
         }//e:wrap3
         // faq
         .wrap4 {
             // background-color: pink;
-            margin:140px;
+            margin:140px; @include layout;
             h1 {font-size:2rem; margin:50px 0; text-align: center; font-family:$titleFont; font-weight: 700;}
             .contanier {
                 text-align: left;
@@ -220,6 +245,7 @@ body {
                 font-weight: 700;
                 position:relative; top:10px;
             }
+            a:hover {background-color:$buttonColor; color:$colorMain;  }
         }
         .footer_bottom {
             width:100%; height:800px;
